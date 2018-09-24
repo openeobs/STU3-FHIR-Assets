@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="DocumentReference" />
   <meta>
-    <lastUpdated value="2018-09-14T17:27:02.646+01:00" />
+    <lastUpdated value="2018-09-24T15:19:29.947+01:00" />
   </meta>
   <url value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-DocumentReference-1" />
   <version value="1.0.0" />
@@ -6514,7 +6514,7 @@
       <definition value="Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate." />
       <comment value="Note that FHIR strings may not exceed 1MB in size" />
       <requirements value="Processors of the data need to be able to know how to interpret the data." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Attachment.contentType" />
@@ -11385,6 +11385,10 @@
     </element>
     <element id="DocumentReference.description">
       <path value="DocumentReference.description" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.content.attachment.contentType">
+      <path value="DocumentReference.content.attachment.contentType" />
       <min value="1" />
     </element>
   </differential>
