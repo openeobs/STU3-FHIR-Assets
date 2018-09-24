@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="Task" />
   <meta>
-    <lastUpdated value="2018-09-19T14:43:13.128+01:00" />
+    <lastUpdated value="2018-09-24T13:21:16.423+01:00" />
   </meta>
   <url value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Task-1" />
   <version value="1.0.0" />
@@ -3457,6 +3457,7 @@
       <type>
         <code value="code" />
       </type>
+      <fixedCode value="requested" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -4547,6 +4548,7 @@
       <type>
         <code value="code" />
       </type>
+      <fixedCode value="plan" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -4585,7 +4587,7 @@
     </element>
     <element id="Task.priority">
       <path value="Task.priority" />
-      <short value="normal | urgent | asap | stat" />
+      <short value="routine | urgent | asap | stat" />
       <definition value="Indicates how quickly the Task should be addressed with respect to other requests." />
       <comment value="Note that FHIR strings may not exceed 1MB in size" />
       <requirements value="Used to identify the service level expected while performing a task." />
@@ -4600,6 +4602,7 @@
         <code value="code" />
       </type>
       <meaningWhenMissing value="If missing, this task should be performed with normal priority" />
+      <fixedCode value="routine" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -6408,23 +6411,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <targetProfile value="https://fhir.nhs.uk/STU3/StructureDefinition/ITK-Device-1" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1" />
-      </type>
-      <type>
-        <code value="Reference" />
         <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -10036,8 +10023,9 @@
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText" />
       </mapping>
     </element>
-    <element id="Task.input.value[x]">
-      <path value="Task.input.value[x]" />
+    <element id="Task.input.value[x]:valueReference">
+      <path value="Task.input.valueReference" />
+      <sliceName value="valueReference" />
       <short value="Content to use in performing the task" />
       <definition value="The value of the input parameter as a basic type." />
       <comment value="A stream of bytes, base64 encoded" />
@@ -10049,122 +10037,8 @@
         <max value="1" />
       </base>
       <type>
-        <code value="base64Binary" />
-      </type>
-      <type>
-        <code value="boolean" />
-      </type>
-      <type>
-        <code value="code" />
-      </type>
-      <type>
-        <code value="date" />
-      </type>
-      <type>
-        <code value="dateTime" />
-      </type>
-      <type>
-        <code value="decimal" />
-      </type>
-      <type>
-        <code value="id" />
-      </type>
-      <type>
-        <code value="instant" />
-      </type>
-      <type>
-        <code value="integer" />
-      </type>
-      <type>
-        <code value="markdown" />
-      </type>
-      <type>
-        <code value="oid" />
-      </type>
-      <type>
-        <code value="positiveInt" />
-      </type>
-      <type>
-        <code value="string" />
-      </type>
-      <type>
-        <code value="time" />
-      </type>
-      <type>
-        <code value="unsignedInt" />
-      </type>
-      <type>
-        <code value="uri" />
-      </type>
-      <type>
-        <code value="Address" />
-      </type>
-      <type>
-        <code value="Age" />
-      </type>
-      <type>
-        <code value="Annotation" />
-      </type>
-      <type>
-        <code value="Attachment" />
-      </type>
-      <type>
-        <code value="CodeableConcept" />
-      </type>
-      <type>
-        <code value="Coding" />
-      </type>
-      <type>
-        <code value="ContactPoint" />
-      </type>
-      <type>
-        <code value="Count" />
-      </type>
-      <type>
-        <code value="Distance" />
-      </type>
-      <type>
-        <code value="Duration" />
-      </type>
-      <type>
-        <code value="HumanName" />
-      </type>
-      <type>
-        <code value="Identifier" />
-      </type>
-      <type>
-        <code value="Money" />
-      </type>
-      <type>
-        <code value="Period" />
-      </type>
-      <type>
-        <code value="Quantity" />
-      </type>
-      <type>
-        <code value="Range" />
-      </type>
-      <type>
-        <code value="Ratio" />
-      </type>
-      <type>
         <code value="Reference" />
-      </type>
-      <type>
-        <code value="SampledData" />
-      </type>
-      <type>
-        <code value="Signature" />
-      </type>
-      <type>
-        <code value="Timing" />
-      </type>
-      <type>
-        <code value="Meta" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Task-1" />
+        <targetProfile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-DocumentReference-1" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -11025,6 +10899,19 @@
         <targetProfile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Task-1" />
       </type>
     </element>
+    <element id="Task.status">
+      <path value="Task.status" />
+      <fixedCode value="requested" />
+    </element>
+    <element id="Task.intent">
+      <path value="Task.intent" />
+      <fixedCode value="plan" />
+    </element>
+    <element id="Task.priority">
+      <path value="Task.priority" />
+      <short value="routine | urgent | asap | stat" />
+      <fixedCode value="routine" />
+    </element>
     <element id="Task.focus">
       <path value="Task.focus" />
       <type>
@@ -11066,23 +10953,7 @@
       <path value="Task.requester.agent" />
       <type>
         <code value="Reference" />
-        <targetProfile value="https://fhir.nhs.uk/STU3/StructureDefinition/ITK-Device-1" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1" />
-      </type>
-      <type>
-        <code value="Reference" />
         <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
       </type>
     </element>
     <element id="Task.requester.agent.reference">
@@ -11142,125 +11013,12 @@
       <path value="Task.input" />
       <min value="1" />
     </element>
-    <element id="Task.input.value[x]">
-      <path value="Task.input.value[x]" />
-      <type>
-        <code value="base64Binary" />
-      </type>
-      <type>
-        <code value="boolean" />
-      </type>
-      <type>
-        <code value="code" />
-      </type>
-      <type>
-        <code value="date" />
-      </type>
-      <type>
-        <code value="dateTime" />
-      </type>
-      <type>
-        <code value="decimal" />
-      </type>
-      <type>
-        <code value="id" />
-      </type>
-      <type>
-        <code value="instant" />
-      </type>
-      <type>
-        <code value="integer" />
-      </type>
-      <type>
-        <code value="markdown" />
-      </type>
-      <type>
-        <code value="oid" />
-      </type>
-      <type>
-        <code value="positiveInt" />
-      </type>
-      <type>
-        <code value="string" />
-      </type>
-      <type>
-        <code value="time" />
-      </type>
-      <type>
-        <code value="unsignedInt" />
-      </type>
-      <type>
-        <code value="uri" />
-      </type>
-      <type>
-        <code value="Address" />
-      </type>
-      <type>
-        <code value="Age" />
-      </type>
-      <type>
-        <code value="Annotation" />
-      </type>
-      <type>
-        <code value="Attachment" />
-      </type>
-      <type>
-        <code value="CodeableConcept" />
-      </type>
-      <type>
-        <code value="Coding" />
-      </type>
-      <type>
-        <code value="ContactPoint" />
-      </type>
-      <type>
-        <code value="Count" />
-      </type>
-      <type>
-        <code value="Distance" />
-      </type>
-      <type>
-        <code value="Duration" />
-      </type>
-      <type>
-        <code value="HumanName" />
-      </type>
-      <type>
-        <code value="Identifier" />
-      </type>
-      <type>
-        <code value="Money" />
-      </type>
-      <type>
-        <code value="Period" />
-      </type>
-      <type>
-        <code value="Quantity" />
-      </type>
-      <type>
-        <code value="Range" />
-      </type>
-      <type>
-        <code value="Ratio" />
-      </type>
+    <element id="Task.input.value[x]:valueReference">
+      <path value="Task.input.valueReference" />
+      <sliceName value="valueReference" />
       <type>
         <code value="Reference" />
-      </type>
-      <type>
-        <code value="SampledData" />
-      </type>
-      <type>
-        <code value="Signature" />
-      </type>
-      <type>
-        <code value="Timing" />
-      </type>
-      <type>
-        <code value="Meta" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Task-1" />
+        <targetProfile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-DocumentReference-1" />
       </type>
     </element>
   </differential>
