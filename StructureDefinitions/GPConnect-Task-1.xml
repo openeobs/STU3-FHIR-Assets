@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="Task" />
   <meta>
-    <lastUpdated value="2018-09-24T16:21:04.525+01:00" />
+    <lastUpdated value="2018-09-27T15:48:07.274+01:00" />
   </meta>
   <url value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Task-1" />
   <version value="1.0.0" />
@@ -818,7 +818,6 @@
       <type>
         <code value="code" />
       </type>
-      <fixedCode value="plan" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -872,7 +871,6 @@
         <code value="code" />
       </type>
       <meaningWhenMissing value="If missing, this task should be performed with normal priority" />
-      <fixedCode value="routine" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -971,8 +969,8 @@
     <element id="Task.description">
       <path value="Task.description" />
       <short value="Human-readable explanation of task" />
-      <definition value="The description MUST contain a summary of the request specific tasks in the following format:&#xD;&#xA;Federated consultation report for {Patient Name} , NHS Number {NHS Number}, seen at {Practice Name}, ODS Code {ODS Code}" />
-      <comment value="Note that FHIR strings may not exceed 1MB in size" />
+      <definition value="A free-text description of what is to be performed." />
+      <comment value="Note that FHIR strings may not exceed 1MB in size." />
       <min value="1" />
       <max value="1" />
       <base>
@@ -1478,6 +1476,10 @@
         <min value="1" />
         <max value="1" />
       </base>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1" />
+      </type>
       <type>
         <code value="Reference" />
         <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1" />
@@ -2352,7 +2354,7 @@
       <definition value="Additional information that may be needed in the execution of the task." />
       <requirements value="Resources and data used to perform the task.  This data is used in the business logic of task execution, and is stored separately because it varies between workflows." />
       <alias value="Supporting Information" />
-      <min value="1" />
+      <min value="0" />
       <max value="*" />
       <base>
         <path value="Task.input" />
@@ -2554,8 +2556,8 @@
         <map value="???" />
       </mapping>
     </element>
-    <element id="Task.input.value[x]:valueReference">
-      <path value="Task.input.valueReference" />
+    <element id="Task.input.valueReference:valueReference">
+      <path value="Task.input.value[x]" />
       <sliceName value="valueReference" />
       <short value="Content to use in performing the task" />
       <definition value="The value of the input parameter as a basic type." />
@@ -2570,6 +2572,10 @@
       <type>
         <code value="Reference" />
         <targetProfile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-DocumentReference-1" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Task-1" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -2967,18 +2973,13 @@
       <path value="Task.status" />
       <fixedCode value="requested" />
     </element>
-    <element id="Task.intent">
-      <path value="Task.intent" />
-      <fixedCode value="plan" />
-    </element>
     <element id="Task.priority">
       <path value="Task.priority" />
       <short value="routine | urgent | asap | stat" />
-      <fixedCode value="routine" />
     </element>
     <element id="Task.description">
       <path value="Task.description" />
-      <definition value="The description MUST contain a summary of the request specific tasks in the following format:&#xD;&#xA;Federated consultation report for {Patient Name} , NHS Number {NHS Number}, seen at {Practice Name}, ODS Code {ODS Code}" />
+      <comment value="Note that FHIR strings may not exceed 1MB in size." />
       <min value="1" />
     </element>
     <element id="Task.focus">
@@ -3024,6 +3025,10 @@
     </element>
     <element id="Task.requester.agent">
       <path value="Task.requester.agent" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1" />
+      </type>
       <type>
         <code value="Reference" />
         <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1" />
@@ -3087,19 +3092,16 @@
         <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1" />
       </type>
     </element>
-    <element id="Task.input">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-        <valueString value="Parameter" />
-      </extension>
-      <path value="Task.input" />
-      <min value="1" />
-    </element>
-    <element id="Task.input.value[x]:valueReference">
+    <element id="Task.input.valueReference:valueReference">
       <path value="Task.input.valueReference" />
       <sliceName value="valueReference" />
       <type>
         <code value="Reference" />
         <targetProfile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-DocumentReference-1" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Task-1" />
       </type>
     </element>
   </differential>
