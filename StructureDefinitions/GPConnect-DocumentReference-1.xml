@@ -8868,11 +8868,9 @@
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="DocumentC80PracticeSetting" />
         </extension>
-        <strength value="example" />
-        <description value="Additional details about where the content was created (e.g. clinical specialty)." />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/c80-practice-codes" />
-        </valueSetReference>
+        <strength value="extensible" />
+        <description value="A code from the SNOMED Clinical Terminology UK coding system that describes a correspondence care setting type." />
+        <valueSetUri value="https://fhir.nhs.uk/STU3/ValueSet/CareSettingType-1" />
       </binding>
       <mapping>
         <identity value="rim" />
@@ -11370,6 +11368,17 @@
         <code value="Reference" />
         <targetProfile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-DocumentReference-1" />
       </type>
+    </element>
+    <element id="DocumentReference.context.practiceSetting">
+      <path value="DocumentReference.context.practiceSetting" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="DocumentC80PracticeSetting" />
+        </extension>
+        <strength value="extensible" />
+        <description value="A code from the SNOMED Clinical Terminology UK coding system that describes a correspondence care setting type." />
+        <valueSetUri value="https://fhir.nhs.uk/STU3/ValueSet/CareSettingType-1" />
+      </binding>
     </element>
     <element id="DocumentReference.context.sourcePatientInfo">
       <path value="DocumentReference.context.sourcePatientInfo" />
