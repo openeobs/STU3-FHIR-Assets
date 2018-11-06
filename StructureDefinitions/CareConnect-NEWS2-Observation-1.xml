@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <url value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-NEWS2-Observation-1" />
   <version value="1.0.0" />
@@ -14,7 +14,7 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="This level 3 Observation profile is designed to capture the National Early Warning Score (NEWS2). This is an aggregate scoring system in which a score is allocated to physiological measurements, already recorded in routine practice, when patients present to, or are being monitored in&#xD;&#xA;hospital.  Six simple physiological parameters form the basis of the scoring system:&#xD;&#xA;1 respiration rate&#xD;&#xA;2 oxygen saturation&#xD;&#xA;3 systolic blood pressure&#xD;&#xA;4 pulse rate&#xD;&#xA;5 level of consciousness or new confusion&#xD;&#xA;6 temperature. " />
+  <description value="This level 3 Observation profile captures the National Early Warning Score (NEWS2), it is an aggregate scoring system in which a score is allocated to physiological measurements, already recorded in routine practice, when patients present to, or are being monitored in hospital.  Six simple physiological parameters form the basis of the scoring system:&#xD;&#xA;1 respiration rate&#xD;&#xA;2 oxygen saturation&#xD;&#xA;3 systolic blood pressure&#xD;&#xA;4 pulse rate&#xD;&#xA;5 level of consciousness or new confusion&#xD;&#xA;6 temperature. " />
   <copyright value="Copyright © 2018 NHS Digital" />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
