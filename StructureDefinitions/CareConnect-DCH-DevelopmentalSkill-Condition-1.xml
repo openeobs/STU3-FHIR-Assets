@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
     <lastUpdated value="2018-04-16T08:55:54.494+01:00" />
@@ -7,10 +7,10 @@
     <valueCode value="pc" />
   </extension>
   <url value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-DCH-DevelopmentalSkill-Condition-1" />
-  <version value="1.0.0" />
+  <version value="1.0.1" />
   <name value="CareConnect-DCH-DevelopmentalSkill-Condition-1" />
   <status value="draft" />
-  <date value="2018-02-01" />
+  <date value="2019-01-18" />
   <publisher value="NHS Digital" />
   <contact>
     <name value="Interoperability Team" />

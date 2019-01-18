@@ -7,10 +7,10 @@
     <valueCode value="pher" />
   </extension>
   <url value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-DCH-Immunization-1" />
-  <version value="1.2.0" />
+  <version value="1.2.1" />
   <name value="CareConnect-DCH-Immunization-1" />
   <status value="draft" />
-  <date value="2019-01-11" />
+  <date value="2019-01-18" />
   <publisher value="NHS Digital" />
   <contact>
     <name value="Interoperability Team" />
@@ -3428,7 +3428,7 @@
         <strength value="extensible" />
         <description value="The site at which the vaccine was administered" />
         <valueSetReference>
-          <reference value="https://fhir.nhs.uk/STU3/ValueSet/DCH-ImmunisationSite-1" />
+          <reference value="http://hl7.org/fhir/stu3/valueset-approach-site-codes.html" />
         </valueSetReference>
       </binding>
       <mapping>
@@ -9551,7 +9551,7 @@
         </extension>
         <strength value="extensible" />
         <valueSetReference>
-          <reference value="https://fhir.nhs.uk/STU3/ValueSet/DCH-ImmunisationSite-1" />
+          <reference value="http://hl7.org/fhir/stu3/valueset-approach-site-codes.html" />
         </valueSetReference>
       </binding>
     </element>
