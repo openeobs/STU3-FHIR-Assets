@@ -190,9 +190,14 @@
 				<date value="2017-10-20"/>
 				<relationship>
 					<coding>
-						<system value="http://hl7.org/fhir/v3/RoleCode"/>
-						<code value="NFTH"/>
-						<display value="natural father"/>
+						<system value="https://fhir.nhs.uk/STU3/ValueSet/DCH-FamilyMemberHistory-PersonRelationshipType-1"/>
+						<code value="444055008"/>
+						<display value="Uncle of subject"/>
+					</coding>
+					<coding>
+						<system value="https://fhir.nhs.uk/STU3/ValueSet/MaternalOrPaternal-1"/>
+						<code value="paternal"/>
+						<display value="Paternal"/>
 					</coding>
 				</relationship>
 				<condition>

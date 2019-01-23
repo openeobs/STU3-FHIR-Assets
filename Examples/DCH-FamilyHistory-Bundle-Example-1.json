@@ -241,9 +241,16 @@
         "relationship": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/v3/RoleCode",
-              "code": "NFTH",
-              "display": "natural father"
+              "system": "https://fhir.nhs.uk/STU3/ValueSet/DCH-FamilyMemberHistory-PersonRelationshipType-1",
+              "code": "444055008",
+              "display": "Uncle of subject"
+            }
+          ]
+		  "coding": [
+            {
+              "system": "https://fhir.nhs.uk/STU3/ValueSet/MaternalOrPaternal-1",
+              "code": "paternal",
+              "display": "Paternal"
             }
           ]
         },

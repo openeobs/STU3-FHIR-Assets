@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+	<id value="MaternalOrPaternal-1"/>
+	<url value="https://fhir.nhs.uk/STU3/CodeSystem/MaternalOrPaternal-1"/>
+	<version value="1.0.0"/>
+	<name value="Maternal or Paternal"/>
+	<status value="draft"/>
+	<date value="2019-01-23T15:40:00+00:00"/>
+	<publisher value="NHS Digital"/>
+	<contact>
+		<name value="Interoperability Team"/>
+		<telecom>
+			<system value="email"/>
+			<value value="interoperabilityteam@nhs.net"/>
+			<use value="work"/>
+		</telecom>
+	</contact>
+	<description value="A CodeSystem to identify if the relation is part of the maternal or paternal side of the family."/>
+	<copyright value="Copyright © 2018 NHS Digital"/>
+	<caseSensitive value="true"/>
+	<content value="complete"/>
+	<concept>
+		<code value="maternal"/>
+		<display value="Maternal"/>
+	</concept>
+	<concept>
+		<code value="paternal"/>
+		<display value="Paternal"/>
+	</concept>	
+</CodeSystem>
